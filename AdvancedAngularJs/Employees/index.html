@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Directives</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+</head>
+
+<body ng-controller="EmployeesController as vm">
+    <div class="container">
+        <h1>Our Employees</h1>
+        <div class="row lead">
+            <li class="list-group-item col-sm-3">
+                Name
+            </li>
+            <li class="list-group-item col-sm-3">
+                Nationality
+            </li>
+            <li class="list-group-item col-sm-3">
+                Date
+            </li>
+            <li class="col-sm-3">
+                
+            </li>
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                <employee-directive data-ng-repeat="employee in vm.employees" employee='employee' show='show(employee)'></employee-directive>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script src="app/scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/employeesController.js"></script>
+    <script src="app/directives/employeeDirectives.js"></script>
+</body>
+
+</html>
